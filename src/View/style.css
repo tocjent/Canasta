@@ -1,0 +1,50 @@
+body {
+    background: #333;
+}
+
+.canasta-card {
+    display: inline-block;
+    background: #FFF;
+    padding: 5px;
+    margin: 5px;
+    width: 50px;
+    height: 80px;
+    position: relative;
+}
+
+.canasta-card::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+}
+
+.canasta-card.canasta-diamonds-bar::after,
+.canasta-card.canasta-hearts-bar::after
+{
+    background-color: red;
+}
+
+.canasta-card.canasta-spades-bar::after,
+.canasta-card.canasta-clubs-bar::after
+{
+    background-color: black;
+}
+
+.canasta-diamonds-symbol {
+    position: relative;
+}
+
+.canasta-diamonds-symbol::after {
+    content: ' ';
+    position: absolute;
+    display: inline-block;
+    background: red;
+    width: 12px;
+    height: 12px;
+    right: 0;
+    top: 50px;
+    transform: rotate(45deg);
+}
