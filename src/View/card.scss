@@ -1,0 +1,152 @@
+.canasta-card {
+    display: inline-block;
+    background: #FFF;
+    padding: 2px;
+    margin: 5px;
+    width: 60px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+
+    -webkit-box-shadow: 2px 2px 5px;
+    -moz-box-shadow:    2px 2px 5px;
+    box-shadow:         2px 2px 5px;
+
+    .canasta-rank-left {
+        width: 50%;
+        float: left;
+        position: relative;
+
+        .canasta-left-symbol {
+            position: absolute;
+            top: 10px;
+            left: -6px;
+            font-family: $letter-font-family;
+            font-size: 60px;
+        }
+    }
+
+    .canasta-rank-right {
+        width: 50%;
+        float: right;
+        position: relative;
+
+        .canasta-right-symbol {
+            position: absolute;
+            top: 10px;
+            right: -6px;
+            font-family: $letter-font-family;
+            font-size: 60px;
+        }
+    }
+}
+
+.canasta-card .canasta-bottom-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+
+    .canasta-bar-symbol {
+        font-family: $letter-font-family;
+        font-size: 3px;
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+    }
+
+    .canasta-bar-name {
+        font-family: $letter-font-family;
+        font-size: 3px;
+        position: absolute;
+        left: 3px;
+        bottom: 3px;
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+    }
+}
+
+.canasta-card .canasta-top-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 15px;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+
+    .canasta-bar-symbol {
+        font-family: $letter-font-family;
+        font-size: 3px;
+        position: absolute;
+        left: 3px;
+        top: 3px;
+    }
+
+    .canasta-bar-name {
+        font-family: $letter-font-family;
+        font-size: 3px;
+        position: absolute;
+        right: 3px;
+        top: 3px;
+    }
+}
+
+.canasta-card.canasta-hearts,
+.canasta-card.canasta-diamonds {
+    .canasta-top-bar {
+        .canasta-bar-symbol,
+        .canasta-bar-name {
+            color: red;
+        }
+    }
+
+    .canasta-left-symbol,
+    .canasta-right-symbol
+    {
+        color: red;
+    }
+
+    .canasta-bottom-bar {
+        .canasta-bar-symbol,
+        .canasta-bar-name {
+            color: white;
+        }
+
+        background: red;
+    }
+}
+
+.canasta-card.canasta-spades,
+.canasta-card.canasta-clubs {
+    .canasta-top-bar {
+        .canasta-bar-symbol,
+        .canasta-bar-name {
+            color: black;
+        }
+    }
+
+
+    .canasta-left-symbol,
+    .canasta-right-symbol
+    {
+        color: black;
+    }
+
+    .canasta-bottom-bar {
+        .canasta-bar-symbol,
+        .canasta-bar-name {
+            color: white;
+        }
+
+        background: black;
+    }
+}

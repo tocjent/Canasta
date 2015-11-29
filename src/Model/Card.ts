@@ -25,5 +25,17 @@ module Model {
         public getRankName() {
             return this.rank.name;
         }
+
+        public getRankSymbol() {
+            return this.rank.symbol;
+        }
+
+        public getLeftSymbol() {
+            return this.rank.leftSymbol;
+        }
+
+        public getRightSymbol() {
+            return this.rank.rightSymbol;
+        }
     }
 }

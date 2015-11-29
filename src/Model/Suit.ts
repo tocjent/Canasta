@@ -14,8 +14,8 @@ module Model {
     var suits: Map<string, Suit> = new Map([
         ['Diamonds', create('DIAMONDS', 'RED')],
         ['Hearts', create('HEARTS', 'RED')],
-        ['Clubs', create('CLUBS', 'BLACK')],
         ['Spades', create('SPADES', 'BLACK')],
+        ['Clubs', create('CLUBS', 'BLACK')],
     ]);
 
 

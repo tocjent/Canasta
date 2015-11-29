@@ -1,0 +1,138 @@
+.canasta-king.canasta-diamonds {
+    .canasta-rank-right {
+        position: relative;
+        right: 0px;
+
+        .canasta-rank-element-first {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            background: red;
+            width: 12px;
+            height: 12px;
+            right: 4px;
+            top: 25px;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.canasta-king.canasta-hearts {
+    .canasta-rank-right {
+        position: relative;
+        right: 0px;
+        top: 8.5px;
+
+        .canasta-rank-element-first,
+        .canasta-rank-element-second {
+            position: absolute;
+            content: "";
+            right: 0px;
+            top: 15px;
+            width: 10px;
+            height: 16px;
+            background: red;
+            -moz-border-radius: 50px 50px 0 0;
+            border-radius: 50px 50px 0 0;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+            -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+        }
+
+        .canasta-rank-element-second {
+            right: 10px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+        }
+    }
+}
+
+.canasta-king.canasta-clubs {
+    .canasta-rank-right {
+        position: relative;
+        top: 28px;
+
+        .canasta-rank-element-first,
+        .canasta-rank-element-second,
+        .canasta-rank-element-third {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background: black;
+        }
+
+
+        .canasta-rank-element-first {
+            top: -6px;
+            left: 10px;
+        }
+        .canasta-rank-element-second {
+            left: 6px;
+        }
+        .canasta-rank-element-third {
+            left: 14px;
+        }
+    }
+}
+
+.canasta-king.canasta-spades {
+    .canasta-rank-right {
+        position: relative;
+        right: 0px;
+        top: -8.5px;
+
+        .canasta-rank-element-first,
+        .canasta-rank-element-second {
+            position: absolute;
+            content: "";
+            right: 0px;
+            top: 15px;
+            width: 10px;
+            height: 16px;
+            background: black;
+            -moz-border-radius: 50px 50px 0 0;
+            border-radius: 50px 50px 0 0;
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            transform: rotate(135deg);
+            -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+            -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+        }
+
+        .canasta-rank-element-second {
+            right: 10px;
+            -webkit-transform: rotate(225deg);
+            -moz-transform: rotate(225deg);
+            -ms-transform: rotate(225deg);
+            -o-transform: rotate(225deg);
+            transform: rotate(225deg);
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+        }
+    }
+}
