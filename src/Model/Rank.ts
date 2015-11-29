@@ -33,7 +33,7 @@ module Model {
         ['Nine', create('NINE', '9', '9', '')],
         ['Ten', create('TEN', '10', '10', '')],
         ['Jack', create('JACK', 'J', '', 'J')],
-        ['Queen', create('QUEEN', 'Q', '', 'J')],
+        ['Queen', create('QUEEN', 'Q', '', 'Q')],
         ['King', create('KING', 'K', '', 'K')]
     ]);
 

@@ -4,7 +4,7 @@ module Canasta {
     var deck = Deck.merge([
         Deck.create52(),
         // Deck.create52(),
-        Deck.createJokers(2)
+        // Deck.createJokers(2)
     ]);
 
     var viewModel = {
@@ -41,7 +41,8 @@ module Canasta {
 
     var template = '';
 
-    template += '<div class="canasta-card suitClass rankClass">';
+    template += '<div class="canasta-card-container">';
+    template += '<div class="canasta-card canasta-card-front suitClass rankClass">';
 
     template += '<div class="canasta-top-bar">';
     template += '<span class="canasta-bar-symbol">rankSymbol</span>';
@@ -75,6 +76,7 @@ module Canasta {
     template += '</div>';
 
     template += '</div>';
+    template += '</div>';
 
     var html = '';
 
@@ -92,4 +94,10 @@ module Canasta {
     var displayContainer = document.getElementById('cards');
 
     displayContainer.innerHTML = html;
+
+    $('.canasta-card-container').flip({
+        front: 'canasta-card-front',
+        back: 'canasta-card-back',
+        trigger: 'hover'
+    });
 }
