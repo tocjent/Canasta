@@ -13,9 +13,9 @@ module Model {
 
     var suits: Map<string, Suit> = new Map([
         ['DIAMONDS', create('Diamonds', 'RED')],
-        ['HEARTS', create('Diamonds', 'RED')],
-        ['SPADES', create('Diamonds', 'BLACK')],
-        ['CLUBS', create('Diamonds', 'BLACK')],
+        ['HEARTS', create('Hearts', 'RED')],
+        ['SPADES', create('Spades', 'BLACK')],
+        ['CLUBS', create('Clubs', 'BLACK')],
     ]);
 
     export const Suits: Map<string, Suit> = suits;

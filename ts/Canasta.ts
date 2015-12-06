@@ -8,6 +8,5 @@ module Canasta {
         // Deck.create52(),
         // Deck.createJokers(2)
     ]);
-
     document.getElementById('cards').innerHTML = View.modelToHTML(deck.getCards());
 }

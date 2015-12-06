@@ -9,7 +9,7 @@
     position: absolute;
     left: 0;
     width: $fullCardWidth;
-    height: $fullCardHeight * 0.15;
+    height: $fullCardHeight * 0.1;
     color: white;
     #{$pos}: 0;
     @if $pos == 'bottom' {
@@ -26,12 +26,46 @@
 
 @mixin rank ($dir, $background) {
     position: absolute;
-    top: $fullCardHeight * 0.15;
+    top: $fullCardHeight * 0.1;
     width: $fullCardWidth * 0.5;
-    height: $fullCardHeight * 0.7;
-    font-size: $fullCardHeight * 0.75;
+    height: $fullCardHeight * 0.8;
+    font-size: $fullCardHeight;
     #{$dir}: 0;
     background: $background;
+}
+
+@mixin card-symbol ($dir) {
+    position: relative;
+    display: inline-block;
+    max-width: $fullCardWidth * 0.5;
+    max-height: $fullCardHeight * 0.8;
+    bottom: $cardHeight * 0.125;
+
+    $dirValue: $cardHeight * (-0.1);
+
+    @if $dir == 'left' {
+        left: $dirValue;
+    }
+    @if $dir == 'right' {
+        right: $dirValue;
+    }
+};
+
+@mixin suit-color($suitName, $color) {
+    &.canasta-#{$suitName} {
+        .canasta-top-bar {
+            color: $color;
+        }
+
+        .canasta-bottom-bar {
+            background: $color;
+        }
+
+        .canasta-rank-left,
+        .canasta-rank-right {
+            color: $color;
+        }
+    }
 }
 
 .canasta-card {
@@ -50,25 +84,10 @@
         @include card-bar(top);
     }
 
-    &.canasta-diamonds,
-    &.canasta-hearts {
-        .canasta-top-bar {
-            color: red;
-        }
-        .canasta-bottom-bar {
-            background: red;
-        }
-    }
-
-    &.canasta-spades,
-    &.canasta-clubs {
-        .canasta-top-bar {
-            color: black;
-        }
-        .canasta-bottom-bar {
-            background: black;
-        }
-    }
+    @include suit-color(diamonds, red);
+    @include suit-color(hearts, red);
+    @include suit-color(clubs, black);
+    @include suit-color(spades, black);
 
     .canasta-bottom-bar {
         @include card-bar(bottom);
@@ -78,7 +97,7 @@
         @include rank(left, green);
 
         .canasta-left-symbol {
-            @include face-card-symbol(left);
+            @include card-symbol(left);
         }
     }
 
@@ -86,11 +105,16 @@
         @include rank(right, blue);
 
         .canasta-right-symbol {
-            @include face-card-symbol(right);
+            @include card-symbol(right);
         }
     }
 
     &.canasta-ten .canasta-right-symbol {
-        letter-spacing: -10px;
+        letter-spacing: $cardHeight * -0.075;
+        right: $cardHeight * 0.0125;
+    }
+
+    &.canasta-jack .canasta-left-symbol {
+        left: $cardHeight * 0.01;
     }
 }

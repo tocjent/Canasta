@@ -1,0 +1,21 @@
+@mixin diamonds($elementSelector, $size) {
+    #{$elementSelector} {
+        display: inline-block;
+        position: relative;
+        width: $size;
+        height: $size;
+
+        .canasta-rank-element-1 {
+            $symbolSize: $size / 1.414 * 0.875;
+            position: absolute;
+            transform: rotate(45deg);
+            left: $size * 0.195;
+            top: $size * 0.255;
+            width: $symbolSize;
+            height: $symbolSize;
+            background: rgba(255, 0, 0, 1);
+        }
+    }
+}
+
+@include diamonds(#diamonds-symbol, 100px);

@@ -24,7 +24,7 @@ gulp.task('compile-sass', function() {
 
 gulp.task('build', ['compile-sass', 'compile-typescript']);
 
-gulp.task('watch', ['build'],function() {
+gulp.task('serve', ['build'],function() {
     connect.server({
         root: [__dirname],
         port: 8000,

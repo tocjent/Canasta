@@ -5,7 +5,7 @@ module Model {
 
         static create52() {
             var singleDeck = new Deck([]);
-
+            
             for(let suit of Suits.values()) {
                 for(let rank of ColorRanks.values()) {
                     let card = Card.create(suit, rank);

@@ -27,50 +27,50 @@ module View {
 
     export var viewUnitToHTML = (card: ViewCard): string => {
 
-        return `` +
-        `<div class="canasta-card ${card.suit} ${card.rank}">
+        return `
+        <div class="canasta-card ${card.suit} ${card.rank}">
 
             <div class="canasta-top-bar">
-                <span class="canasta-bar-symbol">${card.rightSymbol ? card.rightSymbol : card.leftSymbol}</span>
-                <span class="canasta-bar-name">${card.fullName}</span>
+                <div class="canasta-bar-symbol">${card.rightSymbol ? card.rightSymbol : card.leftSymbol}</div>
+                <div class="canasta-bar-name">${card.fullName}</div>
             </div>
 
             <div class="canasta-rank-left">
-                <span class="canasta-left-symbol">
+                <div class="canasta-left-symbol">
                     ${card.leftSymbol}
-                </span>
-                ${numSymbols(card.leftSymbol)}
+                </div>
+                ${numSymbols(card.rightSymbol)}
             </div>
 
             <div class="canasta-rank-right">
-                <span class="canasta-right-symbol">${card.rightSymbol}</span>
-                <div class="canasta-rank-element-first"></div>
-                <div class="canasta-rank-element-second"></div>
-                <div class="canasta-rank-element-third"></div>
+                <div class="canasta-right-symbol">${card.rightSymbol}</div>
+                <div class="canasta-rank-element-1"></div>
+                <div class="canasta-rank-element-2"></div>
+                <div class="canasta-rank-element-3"></div>
             </div>
 
             <div class="canasta-bottom-bar">
-                <span class="canasta-bar-name">${card.fullName}</span>
-                <span class="canasta-bar-symbol">${card.rightSymbol ? card.rightSymbol : card.leftSymbol}</span>
+                <div class="canasta-bar-name">${card.fullName}</div>
+                <div class="canasta-bar-symbol">${card.rightSymbol ? card.rightSymbol : card.leftSymbol}</div>
             </div>
 
             </div>`;
     }
 
     var numRankElement = (name) =>
-        `<div class="canasta-rank-element canasta-rank-element-${name}">
-            <span class="one"></span>
-            <span class="two"></span>
-            <span class="three"></span>
+        `<div class="canasta-number-element canasta-number-element-${name}">
+            <div class="canasta-rank-element-1"></div>
+            <div class="canasta-rank-element-2"></div>
+            <div class="canasta-rank-element-3"></div>
         </div>`;
 
 
     var numSymbols = (symbol: string) => {
         var intSymbol = parseInt(symbol);
         if (intSymbol % 1 === 0) {
-            return Array.from(new Array(5), (val, index) => `
-                ${numRankElement(index + 1)}
-            `).join('');
+            return Array
+                .from(new Array(intSymbol), (val, index) => `${numRankElement(index + 1)}`)
+                .join('');
         }
         return '';
     };

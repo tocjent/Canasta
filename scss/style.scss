@@ -1,4 +1,4 @@
-$cardHeight: 160px;
+$cardHeight: 400px;
 $cardWidth: $cardHeight * 0.75;
 $cardMarginHorizontal: $cardWidth * 0.05;
 $cardMarginVertical: $cardHeight * 0.05;
@@ -8,8 +8,10 @@ $fullCardWidth: $cardWidth + (2 * $cardPaddingVertical);
 $fullCardHeight: $cardHeight + (2 * $cardPaddingHorizontal);
 
 @import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One);
-
-@import "face_card";
+@import "diamonds";
+@import "hearts";
+@import "spades";
+@import "clubs";
 @import "card";
 
 body {

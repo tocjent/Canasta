@@ -1,0 +1,34 @@
+@mixin clubs($elementSelector, $size) {
+    #{$elementSelector} {
+        display: inline-block;
+        position: relative;
+        width: $size;
+        height: $size;
+
+        @mixin circle () {
+            display: inline-block;
+            position: absolute;
+            $circleSize: $size * 0.55;
+            width: $circleSize;
+            height: $circleSize;
+            border-radius: $circleSize * 0.5;
+            background: rgba(0, 0, 0, 1);
+        }
+        .canasta-rank-element-1 {
+            @include circle();
+            bottom: 0;
+        }
+        .canasta-rank-element-2 {
+            @include circle();
+            bottom: 0;
+            right: 0;
+        }
+        .canasta-rank-element-3 {
+            @include circle();
+            top: $size * 0.13;
+            left: $size * 0.22;
+        }
+    }
+}
+
+@include clubs(#clubs-symbol, 100px);

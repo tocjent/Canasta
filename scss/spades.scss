@@ -1,0 +1,36 @@
+@mixin spades($elementSelector, $size) {
+    #{$elementSelector} {
+        display: inline-block;
+        position: relative;
+        width: $size;
+        height: $size;
+
+        $top: $size * 0.0875;
+        $left: $size * 0.125;
+
+        @mixin half-heart($size, $rotation) {
+            border-radius: ($size * 0.25) ($size * 0.25) 0 0;
+            position: absolute;
+            top: $size * 0.1875;
+            @if $rotation == 135deg {
+                right: $size * 0.125;
+            }
+            @if $rotation == 225deg {
+                right: $size * 0.125 + $size * 0.22;
+            }
+            transform: rotate($rotation);
+            width: $size * 0.5375;
+            height: $size * 0.85;
+            background: rgba(0, 0, 0, 1);
+        }
+
+        .canasta-rank-element-1 {
+            @include half-heart($size, 135deg);
+        }
+        .canasta-rank-element-2 {
+            @include half-heart($size, 225deg);
+        }
+    }
+}
+
+@include spades(#spades-symbol, 100px);
