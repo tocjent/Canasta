@@ -1,10 +1,9 @@
-@mixin card-bar-element ($dir) {
+@mixin card-bar-element ($dir, $margin) {
     display: inline-block;
     position: absolute;
     top: $cardPaddingHorizontal * 0.5;
-    #{$dir}: $cardPaddingVertical;
+    #{$dir}: $margin;
 }
-
 @mixin card-bar ($pos) {
     position: absolute;
     left: 0;
@@ -13,17 +12,16 @@
     color: white;
     #{$pos}: 0;
     @if $pos == 'bottom' {
+        left: -1 * $cardHeight * 0.1;
         transform: rotate(180deg);
     }
-
     .canasta-bar-name {
-        @include card-bar-element('right');
+        @include card-bar-element('right',  $cardWidth * 0.173);
     }
     .canasta-bar-symbol {
-        @include card-bar-element('left');
+        @include card-bar-element('left', $cardPaddingHorizontal);
     }
 }
-
 @mixin rank ($dir, $background) {
     position: absolute;
     top: $fullCardHeight * 0.1;
@@ -33,16 +31,13 @@
     #{$dir}: 0;
     background: $background;
 }
-
 @mixin card-symbol ($dir) {
     position: relative;
     display: inline-block;
     max-width: $fullCardWidth * 0.5;
     max-height: $fullCardHeight * 0.8;
-    bottom: $cardHeight * 0.125;
-
-    $dirValue: $cardHeight * (-0.1);
-
+    bottom: $cardHeight * 0.2;
+    $dirValue: $cardHeight * (-0.125);
     @if $dir == 'left' {
         left: $dirValue;
     }
@@ -50,17 +45,14 @@
         right: $dirValue;
     }
 };
-
 @mixin suit-color($suitName, $color) {
     &.canasta-#{$suitName} {
         .canasta-top-bar {
             color: $color;
         }
-
         .canasta-bottom-bar {
             background: $color;
         }
-
         .canasta-rank-left,
         .canasta-rank-right {
             color: $color;
@@ -68,52 +60,132 @@
     }
 }
 
+@mixin suit-elements ($suitName) {
+    &.canasta-#{$suitName} {
+        @if $suitName == 'diamonds' {
+            @include diamonds(".canasta-top-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, red);
+            @include diamonds(".canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, white);
+            @include diamonds(".canasta-number-element", $cardHeight * 0.1, red);
+        }
+        @if $suitName == 'hearts' {
+            @include hearts(".canasta-top-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, red);
+            @include hearts(".canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, white);
+            @include hearts(".canasta-number-element", $cardHeight * 0.1, red);
+        }
+        @if $suitName == 'clubs' {
+            @include clubs(".canasta-top-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, black);
+            @include clubs(".canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, white);
+            @include clubs(".canasta-number-element", $cardHeight * 0.1, black);
+        }
+        @if $suitName == 'spades' {
+            @include spades(".canasta-top-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, black);
+            @include spades(".canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit", $cardHeight * 0.045, white);
+            @include spades(".canasta-number-element", $cardHeight * 0.1, black);
+        }
+        .canasta-bar-symbol .canasta-bar-suit {
+            top: $cardHeight * 0.005;
+            left: $cardHeight * 0.03;
+        }
+        .canasta-number-element-1 {
+            top: $cardHeight * 0.12;
+            left: $cardHeight * 0.05;
+        }
+        $numberElementSize: $cardHeight * 0.1;
+
+        .canasta-number-element-1 {
+            top: $cardHeight * 0.12  + 0 * $numberElementSize;
+            left: $cardHeight * 0.05 + 0 * $numberElementSize;
+        }
+        .canasta-number-element-2 {
+            top: $cardHeight * 0.12   + 0 * $numberElementSize;
+            left: $cardHeight * 0.05  + 1 * $numberElementSize;
+        }
+        .canasta-number-element-3 {
+            top: $cardHeight * 0.12   + 1 * $numberElementSize;
+            left: $cardHeight * 0.05  + 0 * $numberElementSize;
+        }
+        .canasta-number-element-4 {
+            top: $cardHeight * 0.12   + 1 * $numberElementSize;
+            left: $cardHeight * 0.05  + 1 * $numberElementSize;
+        }
+        .canasta-number-element-5 {
+            top: $cardHeight * 0.12   + 2 * $numberElementSize;
+            left: $cardHeight * 0.05  + 0 * $numberElementSize;
+        }
+        .canasta-number-element-6 {
+            top: $cardHeight * 0.12   + 2 * $numberElementSize;
+            left: $cardHeight * 0.05  + 1 * $numberElementSize;
+        }
+        .canasta-number-element-7 {
+            top: $cardHeight * 0.12   + 3 * $numberElementSize;
+            left: $cardHeight * 0.05  + 0 * $numberElementSize;
+        }
+        .canasta-number-element-8 {
+            top: $cardHeight * 0.12   + 3 * $numberElementSize;
+            left: $cardHeight * 0.05  + 1 * $numberElementSize;
+        }
+        .canasta-number-element-9 {
+            top: $cardHeight * 0.12   + 4 * $numberElementSize;
+            left: $cardHeight * 0.05  + 0 * $numberElementSize;
+        }
+        .canasta-number-element-10 {
+            top: $cardHeight * 0.12   + 4 * $numberElementSize;
+            left: $cardHeight * 0.05  + 1 * $numberElementSize;
+        }
+    }
+}
 .canasta-card {
     width: $cardWidth;
     height: $cardHeight;
-    margin: $cardWidth * 0.05 $cardHeight * 0.05;
-    padding: $cardWidth * 0.05 $cardHeight * 0.05;
+    margin: $cardPaddingHorizontal $cardPaddingHorizontal;
+    padding: 0;
     font-size: $cardHeight * 0.05;
     border-radius: ($cardWidth + $cardHeight) * 0.02;
     display: inline-block;
     background: white;
     overflow: hidden;
     position: relative;
-
     .canasta-top-bar {
         @include card-bar(top);
     }
-
     @include suit-color(diamonds, red);
     @include suit-color(hearts, red);
     @include suit-color(clubs, black);
     @include suit-color(spades, black);
 
+    @include suit-elements('diamonds');
+    @include suit-elements('hearts');
+    @include suit-elements('clubs');
+    @include suit-elements('spades');
+
     .canasta-bottom-bar {
         @include card-bar(bottom);
     }
-
     .canasta-rank-left {
-        @include rank(left, green);
-
+        @include rank(left, none);
         .canasta-left-symbol {
             @include card-symbol(left);
         }
     }
-
     .canasta-rank-right {
-        @include rank(right, blue);
-
+        @include rank(right, none);
         .canasta-right-symbol {
             @include card-symbol(right);
         }
+        $faceSymbolSize: $cardHeight * 0.25;
+        @include diamonds(".canasta-diamonds-face-symbol", $faceSymbolSize, rgba(255, 0, 0, 1));
+        @include hearts(".canasta-hearts-face-symbol", $faceSymbolSize, rgba(255, 0, 0, 1));
+        @include spades(".canasta-spades-face-symbol", $faceSymbolSize, rgba(0, 0, 0, 1));
+        @include clubs(".canasta-clubs-face-symbol", $faceSymbolSize, rgba(0, 0, 0, 1));
+        .canasta-face-symbol {
+            top: $cardHeight * 0.25;
+            left: $cardHeight * 0.1;
+        }
     }
-
     &.canasta-ten .canasta-right-symbol {
         letter-spacing: $cardHeight * -0.075;
         right: $cardHeight * 0.0125;
     }
-
     &.canasta-jack .canasta-left-symbol {
         left: $cardHeight * 0.01;
     }

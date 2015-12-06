@@ -1,13 +1,11 @@
-@mixin hearts($elementSelector, $size) {
+@mixin hearts($elementSelector, $size, $color) {
     #{$elementSelector} {
         display: inline-block;
-        position: relative;
+        position: absolute;
         width: $size;
         height: $size;
-
         $top: $size * 0.0875;
         $left: $size * 0.125;
-
         @mixin half-heart($size, $rotation) {
             border-radius: ($size * 0.25) ($size * 0.25) 0 0;
             position: absolute;
@@ -21,9 +19,8 @@
             transform: rotate($rotation);
             width: $size * 0.5375;
             height: $size * 0.85;
-            background: rgba(255, 0, 0, 1);
+            background: $color;
         }
-
         .canasta-rank-element-1 {
             @include half-heart($size, -45deg);
         }
@@ -32,5 +29,3 @@
         }
     }
 }
-
-@include hearts(#hearts-symbol, 100px);

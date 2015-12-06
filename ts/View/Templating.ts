@@ -31,7 +31,14 @@ module View {
         <div class="canasta-card ${card.suit} ${card.rank}">
 
             <div class="canasta-top-bar">
-                <div class="canasta-bar-symbol">${card.rightSymbol ? card.rightSymbol : card.leftSymbol}</div>
+                <div class="canasta-bar-symbol">
+                    ${card.rightSymbol ? card.rightSymbol : card.leftSymbol}
+                    <div class="canasta-bar-suit">
+                        <div class="canasta-rank-element-1"></div>
+                        <div class="canasta-rank-element-2"></div>
+                        <div class="canasta-rank-element-3"></div>
+                    </div>
+                </div>
                 <div class="canasta-bar-name">${card.fullName}</div>
             </div>
 
@@ -44,18 +51,34 @@ module View {
 
             <div class="canasta-rank-right">
                 <div class="canasta-right-symbol">${card.rightSymbol}</div>
-                <div class="canasta-rank-element-1"></div>
-                <div class="canasta-rank-element-2"></div>
-                <div class="canasta-rank-element-3"></div>
+                ${rightSymbol(card)}
             </div>
 
             <div class="canasta-bottom-bar">
                 <div class="canasta-bar-name">${card.fullName}</div>
-                <div class="canasta-bar-symbol">${card.rightSymbol ? card.rightSymbol : card.leftSymbol}</div>
+                <div class="canasta-bar-symbol">
+                    ${card.rightSymbol ? card.rightSymbol : card.leftSymbol}
+                    <div class="canasta-bar-suit">
+                        <div class="canasta-rank-element-1"></div>
+                        <div class="canasta-rank-element-2"></div>
+                        <div class="canasta-rank-element-3"></div>
+                    </div>
+                </div>
             </div>
 
             </div>`;
     }
+
+    var rightSymbol = (card: ViewCard) => {
+        if(card.leftSymbol) {
+            return `<div class="canasta-face-symbol ${card.suit}-face-symbol">
+                <div class="canasta-rank-element-1"></div>
+                <div class="canasta-rank-element-2"></div>
+                <div class="canasta-rank-element-3"></div>
+            </div>`;
+        }
+        return '';
+    };
 
     var numRankElement = (name) =>
         `<div class="canasta-number-element canasta-number-element-${name}">
