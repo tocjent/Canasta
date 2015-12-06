@@ -1,3 +1,5 @@
+/// <reference path="Suit"/>
+/// <reference path="Rank"/>
 "use strict";
 module Model {
     export class Card {
@@ -7,7 +9,7 @@ module Model {
         }
 
         static createJoker(): Card {
-            return new Card(undefined, Joker);
+            return new Card(JokerSuit, JokerRank);
         }
 
         public constructor(
@@ -16,10 +18,7 @@ module Model {
         ) {}
 
         public getSuitName() {
-            if(this.suit) {
-                return this.suit.name;
-            }
-            return '';
+            return this.suit.name;
         }
 
         public getRankName() {

@@ -1,3 +1,4 @@
+/// <reference path="Card"/>
 "use strict";
 module Model {
     export class Deck {

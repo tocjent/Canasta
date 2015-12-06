@@ -20,12 +20,14 @@
         "!node_modules/**"
     ],
     "files": [
-        "src/Canasta.ts",
-        "src/Model/Card.ts",
-        "src/Model/Deck.ts",
-        "src/Model/Rank.ts",
-        "src/Model/Suit.ts"
+        "ts/Canasta.ts",
+        "ts/Model/Card.ts",
+        "ts/Model/Deck.ts",
+        "ts/Model/Rank.ts",
+        "ts/Model/Suit.ts",
+        "ts/View/Templating.ts"
     ],
+    "compileOnSave": false,
     "atom": {
         "rewriteTsconfig": true
     }

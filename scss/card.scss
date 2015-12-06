@@ -1,0 +1,96 @@
+@mixin card-bar-element ($dir) {
+    display: inline-block;
+    position: absolute;
+    top: $cardPaddingHorizontal * 0.5;
+    #{$dir}: $cardPaddingVertical;
+}
+
+@mixin card-bar ($pos) {
+    position: absolute;
+    left: 0;
+    width: $fullCardWidth;
+    height: $fullCardHeight * 0.15;
+    color: white;
+    #{$pos}: 0;
+    @if $pos == 'bottom' {
+        transform: rotate(180deg);
+    }
+
+    .canasta-bar-name {
+        @include card-bar-element('right');
+    }
+    .canasta-bar-symbol {
+        @include card-bar-element('left');
+    }
+}
+
+@mixin rank ($dir, $background) {
+    position: absolute;
+    top: $fullCardHeight * 0.15;
+    width: $fullCardWidth * 0.5;
+    height: $fullCardHeight * 0.7;
+    font-size: $fullCardHeight * 0.75;
+    #{$dir}: 0;
+    background: $background;
+}
+
+.canasta-card {
+    width: $cardWidth;
+    height: $cardHeight;
+    margin: $cardWidth * 0.05 $cardHeight * 0.05;
+    padding: $cardWidth * 0.05 $cardHeight * 0.05;
+    font-size: $cardHeight * 0.05;
+    border-radius: ($cardWidth + $cardHeight) * 0.02;
+    display: inline-block;
+    background: white;
+    overflow: hidden;
+    position: relative;
+
+    .canasta-top-bar {
+        @include card-bar(top);
+    }
+
+    &.canasta-diamonds,
+    &.canasta-hearts {
+        .canasta-top-bar {
+            color: red;
+        }
+        .canasta-bottom-bar {
+            background: red;
+        }
+    }
+
+    &.canasta-spades,
+    &.canasta-clubs {
+        .canasta-top-bar {
+            color: black;
+        }
+        .canasta-bottom-bar {
+            background: black;
+        }
+    }
+
+    .canasta-bottom-bar {
+        @include card-bar(bottom);
+    }
+
+    .canasta-rank-left {
+        @include rank(left, green);
+
+        .canasta-left-symbol {
+            @include face-card-symbol(left);
+        }
+    }
+
+    .canasta-rank-right {
+        @include rank(right, blue);
+
+        .canasta-right-symbol {
+            @include face-card-symbol(right);
+        }
+    }
+
+    &.canasta-ten .canasta-right-symbol {
+        letter-spacing: -10px;
+    }
+}

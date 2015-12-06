@@ -1,0 +1,16 @@
+@mixin face-card-symbol ($dir) {
+    position: relative;
+    display: inline-block;
+    max-width: $fullCardWidth * 0.5;
+    max-height: $fullCardHeight * 0.8;
+    top: -4px;
+
+    $dirValue: 6px;
+
+    @if $dir == 'left' {
+        left: $dirValue;
+    }
+    @if $dir == 'right' {
+        right: -$dirValue;
+    }
+};
