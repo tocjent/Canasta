@@ -12,7 +12,7 @@ module Model {
             return new Card(JokerSuit, JokerRank);
         }
 
-        public constructor(
+        constructor(
             private suit: Suit,
             private rank: Rank
         ) {}

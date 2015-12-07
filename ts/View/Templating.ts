@@ -17,13 +17,22 @@ module View {
     var viewToHTML = (cards: ViewCard[]): string => cards.map(viewUnitToHTML).join('');
 
 
-    var modelUnitToView = (card: Card) => ({
-        suit: 'canasta-' + card.getSuitName().toLowerCase(),
-        rank: 'canasta-' + card.getRankName().toLowerCase(),
-        fullName: card.getRankName() + ' of ' + card.getSuitName(),
-        rightSymbol: card.getRightSymbol(),
-        leftSymbol: card.getLeftSymbol()
-    });
+    var modelUnitToView = (card: Card, index) => {
+        var suit = 'canasta-' + card.getSuitName().toLowerCase();
+        if(suit == 'canasta-joker' && index % 2 == 0) {
+            suit = 'canasta-joker-black';
+        }
+        if(suit == 'canasta-joker' && index % 2 == 1) {
+            suit = 'canasta-joker-red';
+        }
+        return ({
+            suit: suit,
+            rank: card.getRankName() != 'joker' ?  'canasta-' + card.getRankName().toLowerCase() : '',
+            fullName: card.getRankName() == 'Joker' ? '' : card.getRankName() + ' of ' + card.getSuitName(),
+            rightSymbol: card.getRightSymbol(),
+            leftSymbol: card.getLeftSymbol()
+        });
+    };
 
     export var viewUnitToHTML = (card: ViewCard): string => {
 
@@ -47,11 +56,15 @@ module View {
                     ${card.leftSymbol}
                 </div>
                 ${numSymbols(card.rightSymbol)}
+                <div class="canasta-joker-element-1"></div>
+                <div class="canasta-joker-element-2"></div>
             </div>
 
             <div class="canasta-rank-right">
                 <div class="canasta-right-symbol">${card.rightSymbol}</div>
                 ${rightSymbol(card)}
+                <div class="canasta-joker-element-3"></div>
+                <div class="canasta-joker-element-4"></div>
             </div>
 
             <div class="canasta-bottom-bar">

@@ -1,7 +1,7 @@
-$cardHeight: 150px;
+$cardHeight: 1000px;
 $cardWidth: $cardHeight * 0.75;
-$cardMarginHorizontal: $cardWidth * 0.05;
-$cardMarginVertical: $cardHeight * 0.05;
+$cardMarginHorizontal: $cardWidth * 0.15;
+$cardMarginVertical: $cardHeight * 0.15;
 $cardPaddingHorizontal: $cardWidth * 0.05;
 $cardPaddingVertical: $cardHeight * 0.05;
 $fullCardWidth: $cardWidth + (2 * $cardPaddingVertical);

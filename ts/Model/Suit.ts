@@ -20,7 +20,7 @@ module Model {
 
     export const Suits: Map<string, Suit> = suits;
     export const JokerSuit: Suit = {
-        name: 'JOKER',
+        name: 'Joker',
         group: 'JOKER'
     };
 }

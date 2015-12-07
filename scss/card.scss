@@ -189,4 +189,40 @@
     &.canasta-jack .canasta-left-symbol {
         left: $cardHeight * 0.01;
     }
+
+
+    @mixin joker-element($classSelector, $size, $rotation, $posTop, $posLeft, $color) {
+        #{$classSelector} {
+            position: absolute;
+            top: $posTop;
+            left: $posLeft;
+        	border-bottom: $size solid $color;
+        	border-right: $size solid transparent;
+        	height: 0;
+        	width: $size;
+            transform: rotate($rotation);
+        }
+        #{$classSelector}::after {
+            position: absolute;
+            top: 0px;
+            left: $size * 1.16;
+            transform: rotate(45deg);
+            color: $color;
+            font-size: $size * 0.666;
+            content: "Joker";
+        }
+    }
+
+    @mixin joker-full($color) {
+        @include joker-element('.canasta-joker-element-1', $cardHeight * 0.1, 0deg, $cardHeight * 0.333, $cardHeight * 0.12, $color);
+        @include joker-element('.canasta-joker-element-2', $cardHeight * 0.1, 90deg, $cardHeight * 0.167, $cardHeight * 0.287, $color);
+        @include joker-element('.canasta-joker-element-3', $cardHeight * 0.1, 180deg, $cardHeight * 0.333, $cardHeight * 0.12, $color);
+        @include joker-element('.canasta-joker-element-4', $cardHeight * 0.1, 270deg, $cardHeight * 0.5, $cardHeight * -0.04, $color);
+    }
+    &.canasta-joker-red {
+        @include joker-full(red);
+    }
+    &.canasta-joker-black {
+        @include joker-full(black);
+    }
 }
