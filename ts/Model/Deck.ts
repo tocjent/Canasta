@@ -5,7 +5,7 @@ module Model {
 
         static create52() {
             var singleDeck = new Deck([]);
-            
+
             for(let suit of Suits.values()) {
                 for(let rank of ColorRanks.values()) {
                     let card = Card.create(suit, rank);
@@ -37,6 +37,25 @@ module Model {
         constructor(
             private cards: Array<Card>
         ) {}
+
+        shuffle() {
+            var array = this.cards.slice();
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            this.cards = array;
+            return this;
+        }
+
+        dealCards(player: Player, count: number) {
+            var playerCards = this.cards.slice((count + 1) * - 1, -1);
+            var remainingCards = this.cards.slice(-this.cards.length, (count * -1));
+            player.addCards(playerCards);
+            this.cards = remainingCards;
+        }
 
         getCards() : Card[] {
             return this.cards;

@@ -1,4 +1,4 @@
-$cardHeight: 1000px;
+$cardHeight: 80px;
 $cardWidth: $cardHeight * 0.75;
 $cardMarginHorizontal: $cardWidth * 0.15;
 $cardMarginVertical: $cardHeight * 0.15;
@@ -12,6 +12,7 @@ $fullCardHeight: $cardHeight + (2 * $cardPaddingHorizontal);
 @import "spades";
 @import "clubs";
 @import "card";
+@import "player";
 body {
     font-family: 'Pathway Gothic One', sans-serif;
     background: #333;

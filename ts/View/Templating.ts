@@ -35,7 +35,6 @@ module View {
     };
 
     export var viewUnitToHTML = (card: ViewCard): string => {
-
         return `
         <div class="canasta-card ${card.suit} ${card.rank}">
 

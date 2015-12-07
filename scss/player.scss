@@ -1,0 +1,24 @@
+#player-1,
+#player-2,
+#player-3,
+#player-4 {
+    position: absolute;
+    width: $cardWidth * 7;
+}
+
+#player-1 {
+    left: 0;
+    bottom: 0;
+}
+#player-2 {
+    left: 0;
+    top: 0;
+}
+#player-3 {
+    right: 0;
+    top: 0;
+}
+#player-4 {
+    right: 0;
+    bottom: 0;
+}

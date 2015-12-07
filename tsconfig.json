@@ -23,6 +23,7 @@
         "ts/Canasta.ts",
         "ts/Model/Card.ts",
         "ts/Model/Deck.ts",
+        "ts/Model/Player.ts",
         "ts/Model/Rank.ts",
         "ts/Model/Suit.ts",
         "ts/View/Templating.ts"
