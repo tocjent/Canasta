@@ -10,6 +10,7 @@
     width: $fullCardWidth;
     height: $fullCardHeight * 0.1;
     color: white;
+    background: white;
     #{$pos}: 0;
     @if $pos == 'bottom' {
         left: -1 * $cardHeight * 0.1;
@@ -142,7 +143,7 @@
     font-size: $cardHeight * 0.05;
     border-radius: ($cardWidth + $cardHeight) * 0.02;
     display: inline-block;
-    background: white;
+    background: none;
     overflow: hidden;
     position: relative;
     .canasta-top-bar {
@@ -167,6 +168,14 @@
             @include card-symbol(left);
         }
     }
+    .canasta-card-background {
+        background: white;
+        position: relative;
+        left: 0px;
+        top: $cardHeight * 0.1;
+        height: $cardHeight * 0.81;
+        width: $cardWidth;
+    }
     .canasta-rank-right {
         @include rank(right, none);
         .canasta-right-symbol {
@@ -186,6 +195,9 @@
         letter-spacing: $cardHeight * -0.075;
         right: $cardHeight * 0.0125;
     }
+    // &.canasta-ten .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit {
+    //     left: $cardHeight * 0.1;
+    // }
     &.canasta-jack .canasta-left-symbol {
         left: $cardHeight * 0.01;
     }
@@ -194,6 +206,7 @@
     @mixin joker-element($classSelector, $size, $rotation, $posTop, $posLeft, $color) {
         #{$classSelector} {
             position: absolute;
+            z-index: 10;
             top: $posTop;
             left: $posLeft;
         	border-bottom: $size solid $color;

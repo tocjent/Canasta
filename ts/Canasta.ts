@@ -10,6 +10,6 @@ module Canasta {
         Deck.createJokers(4),
         Deck.createJokers(4)
     ]);
-    
+
     document.getElementById('cards').innerHTML = View.modelToHTML(deck.getCards());
 }

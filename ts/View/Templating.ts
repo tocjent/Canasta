@@ -50,7 +50,7 @@ module View {
                 </div>
                 <div class="canasta-bar-name">${card.fullName}</div>
             </div>
-
+            <div class="canasta-card-background"></div>
             <div class="canasta-rank-left">
                 <div class="canasta-left-symbol">
                     ${card.leftSymbol}
