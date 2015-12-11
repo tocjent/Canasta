@@ -19,7 +19,7 @@ module Canasta {
     var playerTwo = Player.create();
     var playerThree = Player.create();
     var playerFour = Player.create();
-
+    
     deck.dealCards(playerOne, 14);
     deck.dealCards(playerTwo, 14);
     deck.dealCards(playerThree, 14);

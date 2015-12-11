@@ -1,0 +1,798 @@
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+.canasta-card {
+  width: 60px;
+  height: 80px;
+  margin: 3px 3px;
+  padding: 0;
+  font-size: 4px;
+  border-radius: 2.8px;
+  display: inline-block;
+  background: none;
+  overflow: hidden;
+  position: relative; }
+  .canasta-card .canasta-top-bar {
+    position: absolute;
+    left: 0;
+    width: 68px;
+    height: 8.6px;
+    color: white;
+    background: white;
+    top: 0; }
+    .canasta-card .canasta-top-bar .canasta-bar-name {
+      display: inline-block;
+      position: absolute;
+      top: 1.5px;
+      right: 10.38px; }
+    .canasta-card .canasta-top-bar .canasta-bar-symbol {
+      display: inline-block;
+      position: absolute;
+      top: 1.5px;
+      left: 3px; }
+  .canasta-card.canasta-diamonds .canasta-top-bar {
+    color: red; }
+  .canasta-card.canasta-diamonds .canasta-bottom-bar {
+    background: red; }
+  .canasta-card.canasta-diamonds .canasta-rank-left,
+  .canasta-card.canasta-diamonds .canasta-rank-right {
+    color: red; }
+  .canasta-card.canasta-hearts .canasta-top-bar {
+    color: red; }
+  .canasta-card.canasta-hearts .canasta-bottom-bar {
+    background: red; }
+  .canasta-card.canasta-hearts .canasta-rank-left,
+  .canasta-card.canasta-hearts .canasta-rank-right {
+    color: red; }
+  .canasta-card.canasta-clubs .canasta-top-bar {
+    color: black; }
+  .canasta-card.canasta-clubs .canasta-bottom-bar {
+    background: black; }
+  .canasta-card.canasta-clubs .canasta-rank-left,
+  .canasta-card.canasta-clubs .canasta-rank-right {
+    color: black; }
+  .canasta-card.canasta-spades .canasta-top-bar {
+    color: black; }
+  .canasta-card.canasta-spades .canasta-bottom-bar {
+    background: black; }
+  .canasta-card.canasta-spades .canasta-rank-left,
+  .canasta-card.canasta-spades .canasta-rank-right {
+    color: black; }
+  .canasta-card.canasta-diamonds .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-diamonds .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      position: absolute;
+      transform: rotate(45deg);
+      left: 0.702px;
+      top: 0.918px;
+      width: 2.22772px;
+      height: 2.22772px;
+      background: red; }
+  .canasta-card.canasta-diamonds .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-diamonds .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      position: absolute;
+      transform: rotate(45deg);
+      left: 0.702px;
+      top: 0.918px;
+      width: 2.22772px;
+      height: 2.22772px;
+      background: white; }
+  .canasta-card.canasta-diamonds .canasta-number-element {
+    display: inline-block;
+    position: absolute;
+    width: 8px;
+    height: 8px; }
+    .canasta-card.canasta-diamonds .canasta-number-element .canasta-rank-element-1 {
+      position: absolute;
+      transform: rotate(45deg);
+      left: 1.56px;
+      top: 2.04px;
+      width: 4.9505px;
+      height: 4.9505px;
+      background: red; }
+  .canasta-card.canasta-diamonds .canasta-bar-symbol .canasta-bar-suit {
+    top: 0.4px;
+    left: 2.4px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-2 {
+    top: 9.6px;
+    left: 12px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-3 {
+    top: 17.6px;
+    left: 4px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-4 {
+    top: 17.6px;
+    left: 12px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-5 {
+    top: 25.6px;
+    left: 4px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-6 {
+    top: 25.6px;
+    left: 12px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-7 {
+    top: 33.6px;
+    left: 4px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-8 {
+    top: 33.6px;
+    left: 12px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-9 {
+    top: 41.6px;
+    left: 4px; }
+  .canasta-card.canasta-diamonds .canasta-number-element-10 {
+    top: 41.6px;
+    left: 12px; }
+  .canasta-card.canasta-hearts .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-hearts .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.315px;
+      left: 0.45px;
+      transform: rotate(-45deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: red; }
+    .canasta-card.canasta-hearts .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-2 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.315px;
+      left: 1.242px;
+      transform: rotate(45deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: red; }
+  .canasta-card.canasta-hearts .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-hearts .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.315px;
+      left: 0.45px;
+      transform: rotate(-45deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: white; }
+    .canasta-card.canasta-hearts .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-2 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.315px;
+      left: 1.242px;
+      transform: rotate(45deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: white; }
+  .canasta-card.canasta-hearts .canasta-number-element {
+    display: inline-block;
+    position: absolute;
+    width: 8px;
+    height: 8px; }
+    .canasta-card.canasta-hearts .canasta-number-element .canasta-rank-element-1 {
+      border-radius: 2px 2px 0 0;
+      position: absolute;
+      top: 0.7px;
+      left: 1px;
+      transform: rotate(-45deg);
+      width: 4.3px;
+      height: 6.8px;
+      background: red; }
+    .canasta-card.canasta-hearts .canasta-number-element .canasta-rank-element-2 {
+      border-radius: 2px 2px 0 0;
+      position: absolute;
+      top: 0.7px;
+      left: 2.76px;
+      transform: rotate(45deg);
+      width: 4.3px;
+      height: 6.8px;
+      background: red; }
+  .canasta-card.canasta-hearts .canasta-bar-symbol .canasta-bar-suit {
+    top: 0.4px;
+    left: 2.4px; }
+  .canasta-card.canasta-hearts .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-hearts .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-hearts .canasta-number-element-2 {
+    top: 9.6px;
+    left: 12px; }
+  .canasta-card.canasta-hearts .canasta-number-element-3 {
+    top: 17.6px;
+    left: 4px; }
+  .canasta-card.canasta-hearts .canasta-number-element-4 {
+    top: 17.6px;
+    left: 12px; }
+  .canasta-card.canasta-hearts .canasta-number-element-5 {
+    top: 25.6px;
+    left: 4px; }
+  .canasta-card.canasta-hearts .canasta-number-element-6 {
+    top: 25.6px;
+    left: 12px; }
+  .canasta-card.canasta-hearts .canasta-number-element-7 {
+    top: 33.6px;
+    left: 4px; }
+  .canasta-card.canasta-hearts .canasta-number-element-8 {
+    top: 33.6px;
+    left: 12px; }
+  .canasta-card.canasta-hearts .canasta-number-element-9 {
+    top: 41.6px;
+    left: 4px; }
+  .canasta-card.canasta-hearts .canasta-number-element-10 {
+    top: 41.6px;
+    left: 12px; }
+  .canasta-card.canasta-clubs .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-clubs .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      display: inline-block;
+      position: absolute;
+      width: 1.98px;
+      height: 1.98px;
+      border-radius: 0.99px;
+      background: black;
+      bottom: 0; }
+    .canasta-card.canasta-clubs .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-2 {
+      display: inline-block;
+      position: absolute;
+      width: 1.98px;
+      height: 1.98px;
+      border-radius: 0.99px;
+      background: black;
+      bottom: 0;
+      right: 0; }
+    .canasta-card.canasta-clubs .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-3 {
+      display: inline-block;
+      position: absolute;
+      width: 1.98px;
+      height: 1.98px;
+      border-radius: 0.99px;
+      background: black;
+      top: 0.468px;
+      left: 0.792px; }
+  .canasta-card.canasta-clubs .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-clubs .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      display: inline-block;
+      position: absolute;
+      width: 1.98px;
+      height: 1.98px;
+      border-radius: 0.99px;
+      background: white;
+      bottom: 0; }
+    .canasta-card.canasta-clubs .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-2 {
+      display: inline-block;
+      position: absolute;
+      width: 1.98px;
+      height: 1.98px;
+      border-radius: 0.99px;
+      background: white;
+      bottom: 0;
+      right: 0; }
+    .canasta-card.canasta-clubs .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-3 {
+      display: inline-block;
+      position: absolute;
+      width: 1.98px;
+      height: 1.98px;
+      border-radius: 0.99px;
+      background: white;
+      top: 0.468px;
+      left: 0.792px; }
+  .canasta-card.canasta-clubs .canasta-number-element {
+    display: inline-block;
+    position: absolute;
+    width: 8px;
+    height: 8px; }
+    .canasta-card.canasta-clubs .canasta-number-element .canasta-rank-element-1 {
+      display: inline-block;
+      position: absolute;
+      width: 4.4px;
+      height: 4.4px;
+      border-radius: 2.2px;
+      background: black;
+      bottom: 0; }
+    .canasta-card.canasta-clubs .canasta-number-element .canasta-rank-element-2 {
+      display: inline-block;
+      position: absolute;
+      width: 4.4px;
+      height: 4.4px;
+      border-radius: 2.2px;
+      background: black;
+      bottom: 0;
+      right: 0; }
+    .canasta-card.canasta-clubs .canasta-number-element .canasta-rank-element-3 {
+      display: inline-block;
+      position: absolute;
+      width: 4.4px;
+      height: 4.4px;
+      border-radius: 2.2px;
+      background: black;
+      top: 1.04px;
+      left: 1.76px; }
+  .canasta-card.canasta-clubs .canasta-bar-symbol .canasta-bar-suit {
+    top: 0.4px;
+    left: 2.4px; }
+  .canasta-card.canasta-clubs .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-clubs .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-clubs .canasta-number-element-2 {
+    top: 9.6px;
+    left: 12px; }
+  .canasta-card.canasta-clubs .canasta-number-element-3 {
+    top: 17.6px;
+    left: 4px; }
+  .canasta-card.canasta-clubs .canasta-number-element-4 {
+    top: 17.6px;
+    left: 12px; }
+  .canasta-card.canasta-clubs .canasta-number-element-5 {
+    top: 25.6px;
+    left: 4px; }
+  .canasta-card.canasta-clubs .canasta-number-element-6 {
+    top: 25.6px;
+    left: 12px; }
+  .canasta-card.canasta-clubs .canasta-number-element-7 {
+    top: 33.6px;
+    left: 4px; }
+  .canasta-card.canasta-clubs .canasta-number-element-8 {
+    top: 33.6px;
+    left: 12px; }
+  .canasta-card.canasta-clubs .canasta-number-element-9 {
+    top: 41.6px;
+    left: 4px; }
+  .canasta-card.canasta-clubs .canasta-number-element-10 {
+    top: 41.6px;
+    left: 12px; }
+  .canasta-card.canasta-spades .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-spades .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.675px;
+      right: 0.45px;
+      transform: rotate(135deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: black; }
+    .canasta-card.canasta-spades .canasta-top-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-2 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.675px;
+      right: 1.242px;
+      transform: rotate(225deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: black; }
+  .canasta-card.canasta-spades .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit {
+    display: inline-block;
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px; }
+    .canasta-card.canasta-spades .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-1 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.675px;
+      right: 0.45px;
+      transform: rotate(135deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: white; }
+    .canasta-card.canasta-spades .canasta-bottom-bar .canasta-bar-symbol .canasta-bar-suit .canasta-rank-element-2 {
+      border-radius: 0.9px 0.9px 0 0;
+      position: absolute;
+      top: 0.675px;
+      right: 1.242px;
+      transform: rotate(225deg);
+      width: 1.935px;
+      height: 3.06px;
+      background: white; }
+  .canasta-card.canasta-spades .canasta-number-element {
+    display: inline-block;
+    position: absolute;
+    width: 8px;
+    height: 8px; }
+    .canasta-card.canasta-spades .canasta-number-element .canasta-rank-element-1 {
+      border-radius: 2px 2px 0 0;
+      position: absolute;
+      top: 1.5px;
+      right: 1px;
+      transform: rotate(135deg);
+      width: 4.3px;
+      height: 6.8px;
+      background: black; }
+    .canasta-card.canasta-spades .canasta-number-element .canasta-rank-element-2 {
+      border-radius: 2px 2px 0 0;
+      position: absolute;
+      top: 1.5px;
+      right: 2.76px;
+      transform: rotate(225deg);
+      width: 4.3px;
+      height: 6.8px;
+      background: black; }
+  .canasta-card.canasta-spades .canasta-bar-symbol .canasta-bar-suit {
+    top: 0.4px;
+    left: 2.4px; }
+  .canasta-card.canasta-spades .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-spades .canasta-number-element-1 {
+    top: 9.6px;
+    left: 4px; }
+  .canasta-card.canasta-spades .canasta-number-element-2 {
+    top: 9.6px;
+    left: 12px; }
+  .canasta-card.canasta-spades .canasta-number-element-3 {
+    top: 17.6px;
+    left: 4px; }
+  .canasta-card.canasta-spades .canasta-number-element-4 {
+    top: 17.6px;
+    left: 12px; }
+  .canasta-card.canasta-spades .canasta-number-element-5 {
+    top: 25.6px;
+    left: 4px; }
+  .canasta-card.canasta-spades .canasta-number-element-6 {
+    top: 25.6px;
+    left: 12px; }
+  .canasta-card.canasta-spades .canasta-number-element-7 {
+    top: 33.6px;
+    left: 4px; }
+  .canasta-card.canasta-spades .canasta-number-element-8 {
+    top: 33.6px;
+    left: 12px; }
+  .canasta-card.canasta-spades .canasta-number-element-9 {
+    top: 41.6px;
+    left: 4px; }
+  .canasta-card.canasta-spades .canasta-number-element-10 {
+    top: 41.6px;
+    left: 12px; }
+  .canasta-card .canasta-bottom-bar {
+    position: absolute;
+    left: 0;
+    width: 68px;
+    height: 8.6px;
+    color: white;
+    background: white;
+    bottom: 0;
+    left: -8px;
+    transform: rotate(180deg); }
+    .canasta-card .canasta-bottom-bar .canasta-bar-name {
+      display: inline-block;
+      position: absolute;
+      top: 1.5px;
+      right: 10.38px; }
+    .canasta-card .canasta-bottom-bar .canasta-bar-symbol {
+      display: inline-block;
+      position: absolute;
+      top: 1.5px;
+      left: 3px; }
+  .canasta-card .canasta-rank-left {
+    position: absolute;
+    top: 8.6px;
+    width: 34px;
+    height: 68.8px;
+    font-size: 86px;
+    left: 0;
+    background: none; }
+    .canasta-card .canasta-rank-left .canasta-left-symbol {
+      position: relative;
+      display: inline-block;
+      max-width: 34px;
+      max-height: 68.8px;
+      bottom: 16px;
+      left: -10px; }
+  .canasta-card .canasta-card-background {
+    background: white;
+    position: relative;
+    left: 0px;
+    top: 8px;
+    height: 64.8px;
+    width: 60px; }
+  .canasta-card .canasta-rank-right {
+    position: absolute;
+    top: 8.6px;
+    width: 34px;
+    height: 68.8px;
+    font-size: 86px;
+    right: 0;
+    background: none; }
+    .canasta-card .canasta-rank-right .canasta-right-symbol {
+      position: relative;
+      display: inline-block;
+      max-width: 34px;
+      max-height: 68.8px;
+      bottom: 16px;
+      right: -10px; }
+    .canasta-card .canasta-rank-right .canasta-diamonds-face-symbol {
+      display: inline-block;
+      position: absolute;
+      width: 20px;
+      height: 20px; }
+      .canasta-card .canasta-rank-right .canasta-diamonds-face-symbol .canasta-rank-element-1 {
+        position: absolute;
+        transform: rotate(45deg);
+        left: 3.9px;
+        top: 5.1px;
+        width: 12.37624px;
+        height: 12.37624px;
+        background: red; }
+    .canasta-card .canasta-rank-right .canasta-hearts-face-symbol {
+      display: inline-block;
+      position: absolute;
+      width: 20px;
+      height: 20px; }
+      .canasta-card .canasta-rank-right .canasta-hearts-face-symbol .canasta-rank-element-1 {
+        border-radius: 5px 5px 0 0;
+        position: absolute;
+        top: 1.75px;
+        left: 2.5px;
+        transform: rotate(-45deg);
+        width: 10.75px;
+        height: 17px;
+        background: red; }
+      .canasta-card .canasta-rank-right .canasta-hearts-face-symbol .canasta-rank-element-2 {
+        border-radius: 5px 5px 0 0;
+        position: absolute;
+        top: 1.75px;
+        left: 6.9px;
+        transform: rotate(45deg);
+        width: 10.75px;
+        height: 17px;
+        background: red; }
+    .canasta-card .canasta-rank-right .canasta-spades-face-symbol {
+      display: inline-block;
+      position: absolute;
+      width: 20px;
+      height: 20px; }
+      .canasta-card .canasta-rank-right .canasta-spades-face-symbol .canasta-rank-element-1 {
+        border-radius: 5px 5px 0 0;
+        position: absolute;
+        top: 3.75px;
+        right: 2.5px;
+        transform: rotate(135deg);
+        width: 10.75px;
+        height: 17px;
+        background: black; }
+      .canasta-card .canasta-rank-right .canasta-spades-face-symbol .canasta-rank-element-2 {
+        border-radius: 5px 5px 0 0;
+        position: absolute;
+        top: 3.75px;
+        right: 6.9px;
+        transform: rotate(225deg);
+        width: 10.75px;
+        height: 17px;
+        background: black; }
+    .canasta-card .canasta-rank-right .canasta-clubs-face-symbol {
+      display: inline-block;
+      position: absolute;
+      width: 20px;
+      height: 20px; }
+      .canasta-card .canasta-rank-right .canasta-clubs-face-symbol .canasta-rank-element-1 {
+        display: inline-block;
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        border-radius: 5.5px;
+        background: black;
+        bottom: 0; }
+      .canasta-card .canasta-rank-right .canasta-clubs-face-symbol .canasta-rank-element-2 {
+        display: inline-block;
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        border-radius: 5.5px;
+        background: black;
+        bottom: 0;
+        right: 0; }
+      .canasta-card .canasta-rank-right .canasta-clubs-face-symbol .canasta-rank-element-3 {
+        display: inline-block;
+        position: absolute;
+        width: 11px;
+        height: 11px;
+        border-radius: 5.5px;
+        background: black;
+        top: 2.6px;
+        left: 4.4px; }
+    .canasta-card .canasta-rank-right .canasta-face-symbol {
+      top: 20px;
+      left: 8px; }
+  .canasta-card.canasta-ten .canasta-right-symbol {
+    letter-spacing: -6px;
+    right: 1px; }
+  .canasta-card.canasta-jack .canasta-left-symbol {
+    left: 0.8px; }
+  .canasta-card.canasta-joker-red .canasta-joker-element-1 {
+    position: absolute;
+    z-index: 10;
+    top: 26.64px;
+    left: 9.6px;
+    border-bottom: 8px solid red;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(0deg); }
+  .canasta-card.canasta-joker-red .canasta-joker-element-1::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: red;
+    font-size: 5.328px;
+    content: "Joker"; }
+  .canasta-card.canasta-joker-red .canasta-joker-element-2 {
+    position: absolute;
+    z-index: 10;
+    top: 13.36px;
+    left: 22.96px;
+    border-bottom: 8px solid red;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(90deg); }
+  .canasta-card.canasta-joker-red .canasta-joker-element-2::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: red;
+    font-size: 5.328px;
+    content: "Joker"; }
+  .canasta-card.canasta-joker-red .canasta-joker-element-3 {
+    position: absolute;
+    z-index: 10;
+    top: 26.64px;
+    left: 9.6px;
+    border-bottom: 8px solid red;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(180deg); }
+  .canasta-card.canasta-joker-red .canasta-joker-element-3::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: red;
+    font-size: 5.328px;
+    content: "Joker"; }
+  .canasta-card.canasta-joker-red .canasta-joker-element-4 {
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    left: -3.2px;
+    border-bottom: 8px solid red;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(270deg); }
+  .canasta-card.canasta-joker-red .canasta-joker-element-4::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: red;
+    font-size: 5.328px;
+    content: "Joker"; }
+  .canasta-card.canasta-joker-black .canasta-joker-element-1 {
+    position: absolute;
+    z-index: 10;
+    top: 26.64px;
+    left: 9.6px;
+    border-bottom: 8px solid black;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(0deg); }
+  .canasta-card.canasta-joker-black .canasta-joker-element-1::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: black;
+    font-size: 5.328px;
+    content: "Joker"; }
+  .canasta-card.canasta-joker-black .canasta-joker-element-2 {
+    position: absolute;
+    z-index: 10;
+    top: 13.36px;
+    left: 22.96px;
+    border-bottom: 8px solid black;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(90deg); }
+  .canasta-card.canasta-joker-black .canasta-joker-element-2::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: black;
+    font-size: 5.328px;
+    content: "Joker"; }
+  .canasta-card.canasta-joker-black .canasta-joker-element-3 {
+    position: absolute;
+    z-index: 10;
+    top: 26.64px;
+    left: 9.6px;
+    border-bottom: 8px solid black;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(180deg); }
+  .canasta-card.canasta-joker-black .canasta-joker-element-3::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: black;
+    font-size: 5.328px;
+    content: "Joker"; }
+  .canasta-card.canasta-joker-black .canasta-joker-element-4 {
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    left: -3.2px;
+    border-bottom: 8px solid black;
+    border-right: 8px solid transparent;
+    height: 0;
+    width: 8px;
+    transform: rotate(270deg); }
+  .canasta-card.canasta-joker-black .canasta-joker-element-4::after {
+    position: absolute;
+    top: 0px;
+    left: 9.28px;
+    transform: rotate(45deg);
+    color: black;
+    font-size: 5.328px;
+    content: "Joker"; }
+
+#player-1,
+#player-2,
+#player-3,
+#player-4 {
+  position: absolute;
+  width: 420px; }
+
+#player-1 {
+  left: 0;
+  bottom: 0; }
+
+#player-2 {
+  left: 0;
+  top: 0; }
+
+#player-3 {
+  right: 0;
+  top: 0; }
+
+#player-4 {
+  right: 0;
+  bottom: 0; }
+
+body {
+  font-family: 'Pathway Gothic One', sans-serif;
+  background: #333; }
